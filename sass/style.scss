@@ -1,0 +1,168 @@
+@mixin BoxShadow($width) {
+    box-shadow: 0 #{$width}px #{$width}px rgba(#000, .3);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .info{
+        width: 400px;
+        height: 400px;
+        background-color: #f3f3f3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+    }
+
+    .searchForCity{
+        display: flex;
+
+
+        #countrySearcherCont, #citySearcherCont{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+
+            #countrySelected, #citySelected{
+                border: 1px solid #000;
+                width: 200px;
+                height: 2rem;
+                margin: 1rem;
+                margin-bottom: 0rem;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #citySelected{
+                pointer-events: none;
+                background-color: rgb(161, 161, 161);
+                color: rgb(230, 230, 230);
+                border-color: rgb(190, 190, 190);
+                transition: all .3s ease;
+        
+                &.active{
+                    pointer-events: all;
+                    background-color: rgb(255, 255, 255);
+                    color: rgb(0, 0, 0);
+                    border-color: rgb(0, 0, 0);
+                }
+            }
+        
+        
+            .searcher{
+                overflow: auto;
+                position: absolute;
+                top: 3rem;
+
+                background-color: #fff;
+                width: 200px;
+                height: 0px;
+                max-height: 400px;
+                box-shadow: 0px 3px 3px #000;
+        
+                transition: all .3s ease;
+        
+                &.active{
+                    transition: all .3s ease;
+                    height: auto;
+                }
+        
+                // fieldset{
+        
+                // }
+        
+                #countriesResult, #citiesResult{
+                    .country, .city{
+                        border: 1px solid #000;
+                        background-color: #fff;
+                        color: #000;
+        
+                        padding: 1rem;
+                        font-weight: 700;
+                        text-align: center;
+                        cursor: pointer;
+        
+                        transition: all .3s ease;
+        
+                        &:hover{
+                            border: 1px solid #fff;
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #getWeatherBtn{
+        margin-top: 2rem;
+        border: none;
+        outline: none;
+        padding: 1rem 2rem;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        pointer-events: none;
+        transition: all .3s ease;
+        background-color: rgb(119, 119, 119);
+        color: rgb(196, 196, 196);
+        border: 1px solid rgb(196, 196, 196);
+        @include BoxShadow(3);
+
+        &.active{
+            pointer-events: all;
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #000;
+    
+            &:hover{
+                cursor: pointer;
+                background-color: #fff;
+                color: #000;
+                border: 1px solid #000;
+            }
+        }
+    }
+
+    #changeSystem{
+        margin-top: 2rem;
+        border: none;
+        outline: none;
+        padding: 1rem 2rem;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+
+        transition: all .3s ease;
+        background-color: rgb(26, 14, 14);
+        color: rgb(255, 255, 255);
+        border: 1px solid rgb(26, 14, 14);
+        @include BoxShadow(3);
+
+        cursor: pointer;
+
+        &:active{
+            background-color: rgb(221, 130, 130);
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(26, 14, 14);
+            box-shadow: none;
+        }
+    }
+}
+

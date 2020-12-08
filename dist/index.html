@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <!-- font-family: 'Roboto', sans-serif; -->
+</head>
+<body>
+    <div class="info" id="info">
+        <div class="temperature">0<b>°C</b></div>
+        <div class="weatherType">WeatherApp</div>
+    </div>
+    <div class="searchForCity">
+        <div id="countrySearcherCont">
+            <div id="countrySelected">Search your country...</div>
+            <div class="searcher" id="countrySearcher">
+                <fieldset>
+                    <label>Write at least 3 letters...</label>
+                    <input type="text" name="" id="countryInput">
+                </fieldset>
+                <div id="countriesResult">
+                   
+                </div>
+            </div>
+        </div>
+    
+        <div id="citySearcherCont">
+            <div id="citySelected">Search your city...</div>
+            <div class="searcher" id="citySearcher">
+                <fieldset>
+                    <label>Write at least 3 letters...</label>
+                    <input type="text" name="" id="cityInput">
+                </fieldset>
+                <div id="citiesResult">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="getWeatherBtn">Get Weather</button>
+    <button id="changeSystem" data-system="Celcius">°C</button>
+</body>
+<script type="module" src="app/app.js"></script>
+<script type="module" src="app/classes.js"></script>
+</html>
